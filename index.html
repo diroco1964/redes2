@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Parcial 2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <h1 id="title"></h1>
+
+  <section id="start" class="card">
+    <p><span id="count"></span> preguntas. Se hacen todas en cada intento, en orden aleatorio.</p>
+    <button id="startBtn" class="primary">Comenzar</button>
+  </section>
+
+  <section id="quiz" class="card" hidden>
+    <div class="progress"><div id="bar"></div></div>
+    <p class="meta"><span id="pos"></span> · Aciertos: <span id="score">0</span></p>
+    <h2 id="question"></h2>
+    <ul id="options"></ul>
+    <div id="feedback" hidden></div>
+    <button id="nextBtn" class="primary" hidden>Siguiente</button>
+  </section>
+
+  <section id="result" class="card" hidden>
+    <h2>Resultado: <span id="final"></span></h2>
+    <div id="wrong"></div>
+    <button id="againBtn" class="primary">Reintentar (nuevo orden)</button>
+  </section>
+</main>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

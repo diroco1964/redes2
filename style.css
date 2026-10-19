@@ -1,0 +1,41 @@
+:root {
+  --bg: #f4f5f7; --card: #fff; --text: #1d2330; --muted: #5d6677; --border: #d6dae1;
+  --accent: #2b5fd9; --ok: #1f8a4c; --ok-bg: #e6f5ec; --bad: #c0392b; --bad-bg: #fbeae8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171d; --card: #1e232c; --text: #e8eaee; --muted: #9aa3b2; --border: #333b48;
+    --accent: #6c93f5; --ok: #4cc07d; --ok-bg: #173324; --bad: #f0786b; --bad-bg: #3a1d1a;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, sans-serif; }
+#app { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 1.4rem; }
+h2 { font-size: 1.15rem; margin: .5rem 0 1rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.meta { color: var(--muted); margin: 8px 0 0; font-size: .9rem; }
+.progress { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+#bar { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+ul { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 8px; }
+#options button {
+  width: 100%; text-align: left; padding: 12px 14px; font: inherit; color: inherit;
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px; cursor: pointer;
+}
+#options button:hover:not(:disabled) { border-color: var(--accent); }
+#options button:disabled { cursor: default; }
+#options button.correct { background: var(--ok-bg); border-color: var(--ok); }
+#options button.wrong { background: var(--bad-bg); border-color: var(--bad); }
+#feedback { padding: 12px 14px; border-radius: 8px; margin-bottom: 16px; }
+#feedback p { margin: 6px 0 0; color: var(--muted); }
+#feedback.ok { background: var(--ok-bg); }
+#feedback.bad { background: var(--bad-bg); }
+.primary {
+  font: inherit; padding: 10px 18px; border: 0; border-radius: 8px; cursor: pointer;
+  background: var(--accent); color: #fff;
+}
+.review { border-top: 1px solid var(--border); padding: 12px 0; }
+.review p { margin: 4px 0 0; }
+.bad-text { color: var(--bad); }
+.ok-text { color: var(--ok); }
+[hidden] { display: none !important; }
